@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Countries | Starlink Immigration</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root { --blue: #004aad; --yellow: #ffd500; --red: #d90429; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f8f9fa; }
+.navbar { background-color: var(--blue); }
+.navbar .nav-link, .navbar-brand { color: #fff !important; }
+.navbar .nav-link:hover { color: var(--yellow) !important; }
+header.hero { background: linear-gradient(180deg, rgba(0,74,173,0.85), rgba(0,74,173,0.65)); color: #fff; padding: 60px 0; }
+.header-title { color: var(--yellow); font-weight:700; }
+.section-intro { padding: 40px 0; }
+.search-box { max-width: 720px; margin: 0 auto 30px; }
+.country-list { max-height: 60vh; overflow: auto; padding: 10px; }
+.country-card { border-left: 4px solid var(--blue); padding: 12px; margin-bottom: 10px; background: #fff; border-radius:6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.country-card:hover { border-left-color: var(--red); transform: translateY(-2px); transition: 0.15s ease; }
+.footer { background-color: var(--blue); color:#fff; padding:30px 0; margin-top:30px; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Starlink Immigration</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Countries</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero text-center">
+  <div class="container">
+    <h1 class="header-title display-6">Countries We Serve</h1>
+    <p class="lead">Explore professional lifestyle and work culture summaries for countries worldwide, with visa guidance opportunities.</p>
+  </div>
+</header>
+
+<main class="container my-4">
+  <section class="section-intro">
+    <h2>Work & Tourist Visas — Global Overview</h2>
+    <p>Each country has unique visa requirements for work and tourism. Work visas often require specialized skills or sponsorship, while tourist visas allow short-term visits. Skilled professionals are welcomed in many nations, offering career opportunities in IT, finance, engineering, healthcare, and education sectors.</p>
+    <div class="search-box">
+      <input id="searchInput" class="form-control" placeholder="Search countries (e.g., Canada, Japan)..." oninput="filterList()" />
+    </div>
+  </section>
+  <section>
+    <div id="countryList" class="country-list">
+      <div class="country-card" data-name="afghanistan">
+        <h5 class="mb-1">Afghanistan</h5>
+        <p class="mb-0">Afghanistan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="albania">
+        <h5 class="mb-1">Albania</h5>
+        <p class="mb-0">Albania has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="algeria">
+        <h5 class="mb-1">Algeria</h5>
+        <p class="mb-0">Algeria has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="andorra">
+        <h5 class="mb-1">Andorra</h5>
+        <p class="mb-0">Andorra combines high quality of life with professional sectors that emphasize specialized services, tourism, or finance. Work culture is structured and supportive for skilled expatriates.</p>
+      </div>
+      <div class="country-card" data-name="angola">
+        <h5 class="mb-1">Angola</h5>
+        <p class="mb-0">Angola has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="antigua and barbuda">
+        <h5 class="mb-1">Antigua and Barbuda</h5>
+        <p class="mb-0">Antigua and Barbuda has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="argentina">
+        <h5 class="mb-1">Argentina</h5>
+        <p class="mb-0">Argentina offers lively social cultures and warm communities. Work environments balance professionalism with interpersonal relationships. Opportunities exist in agriculture, technology, tourism, and service industries for skilled workers.</p>
+      </div>
+      <div class="country-card" data-name="armenia">
+        <h5 class="mb-1">Armenia</h5>
+        <p class="mb-0">Armenia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="australia">
+        <h5 class="mb-1">Australia</h5>
+        <p class="mb-0">Australia offers a high standard of living with diverse urban environments and inclusive social systems. Work culture emphasizes innovation, collaboration, and professional growth opportunities. Skilled migrants are welcomed through various employment-based visa programs.</p>
+      </div>
+      <div class="country-card" data-name="austria">
+        <h5 class="mb-1">Austria</h5>
+        <p class="mb-0">Austria is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="azerbaijan">
+        <h5 class="mb-1">Azerbaijan</h5>
+        <p class="mb-0">Azerbaijan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="bahamas">
+        <h5 class="mb-1">Bahamas</h5>
+        <p class="mb-0">Bahamas has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="bahrain">
+        <h5 class="mb-1">Bahrain</h5>
+        <p class="mb-0">Bahrain features modern urban centers and international business hubs. Work culture often prioritizes development and collaboration. Professionals in engineering, finance, healthcare, and IT can access employment visas.</p>
+      </div>
+      <div class="country-card" data-name="bangladesh">
+        <h5 class="mb-1">Bangladesh</h5>
+        <p class="mb-0">Bangladesh features vibrant, community-oriented lifestyles with strong social networks. Work culture is adaptable, combining family-centered values with entrepreneurial and professional opportunities. Skilled individuals can explore growth in IT, business services, and education sectors.</p>
+      </div>
+      <div class="country-card" data-name="barbados">
+        <h5 class="mb-1">Barbados</h5>
+        <p class="mb-0">Barbados has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="belarus">
+        <h5 class="mb-1">Belarus</h5>
+        <p class="mb-0">Belarus has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="belgium">
+        <h5 class="mb-1">Belgium</h5>
+        <p class="mb-0">Belgium is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="belize">
+        <h5 class="mb-1">Belize</h5>
+        <p class="mb-0">Belize has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="benin">
+        <h5 class="mb-1">Benin</h5>
+        <p class="mb-0">Benin has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="bhutan">
+        <h5 class="mb-1">Bhutan</h5>
+        <p class="mb-0">Bhutan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="bolivia">
+        <h5 class="mb-1">Bolivia</h5>
+        <p class="mb-0">Bolivia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="bosnia and herzegovina">
+        <h5 class="mb-1">Bosnia and Herzegovina</h5>
+        <p class="mb-0">Bosnia and Herzegovina has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="botswana">
+        <h5 class="mb-1">Botswana</h5>
+        <p class="mb-0">Botswana has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="brazil">
+        <h5 class="mb-1">Brazil</h5>
+        <p class="mb-0">Brazil offers lively social cultures and warm communities. Work environments balance professionalism with interpersonal relationships. Opportunities exist in agriculture, technology, tourism, and service industries for skilled workers.</p>
+      </div>
+      <div class="country-card" data-name="brunei">
+        <h5 class="mb-1">Brunei</h5>
+        <p class="mb-0">Brunei has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="bulgaria">
+        <h5 class="mb-1">Bulgaria</h5>
+        <p class="mb-0">Bulgaria combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="burkina faso">
+        <h5 class="mb-1">Burkina Faso</h5>
+        <p class="mb-0">Burkina Faso has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="burundi">
+        <h5 class="mb-1">Burundi</h5>
+        <p class="mb-0">Burundi has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="cabo verde">
+        <h5 class="mb-1">Cabo Verde</h5>
+        <p class="mb-0">Cabo Verde has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="cambodia">
+        <h5 class="mb-1">Cambodia</h5>
+        <p class="mb-0">Cambodia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="cameroon">
+        <h5 class="mb-1">Cameroon</h5>
+        <p class="mb-0">Cameroon has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="canada">
+        <h5 class="mb-1">Canada</h5>
+        <p class="mb-0">Canada offers a high standard of living with diverse urban environments and inclusive social systems. Work culture emphasizes innovation, collaboration, and professional growth opportunities. Skilled migrants are welcomed through various employment-based visa programs.</p>
+      </div>
+      <div class="country-card" data-name="central african republic">
+        <h5 class="mb-1">Central African Republic</h5>
+        <p class="mb-0">Central African Republic has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="chad">
+        <h5 class="mb-1">Chad</h5>
+        <p class="mb-0">Chad has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="chile">
+        <h5 class="mb-1">Chile</h5>
+        <p class="mb-0">Chile offers lively social cultures and warm communities. Work environments balance professionalism with interpersonal relationships. Opportunities exist in agriculture, technology, tourism, and service industries for skilled workers.</p>
+      </div>
+      <div class="country-card" data-name="china">
+        <h5 class="mb-1">China</h5>
+        <p class="mb-0">China blends advanced urban infrastructure with rich cultural heritage. Work environments are structured and efficiency-driven, valuing discipline and teamwork. Professionals seeking skilled employment often find robust opportunities in technology, finance, and manufacturing sectors.</p>
+      </div>
+      <div class="country-card" data-name="colombia">
+        <h5 class="mb-1">Colombia</h5>
+        <p class="mb-0">Colombia offers lively social cultures and warm communities. Work environments balance professionalism with interpersonal relationships. Opportunities exist in agriculture, technology, tourism, and service industries for skilled workers.</p>
+      </div>
+      <div class="country-card" data-name="comoros">
+        <h5 class="mb-1">Comoros</h5>
+        <p class="mb-0">Comoros has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="congo (congo-brazzaville)">
+        <h5 class="mb-1">Congo (Congo-Brazzaville)</h5>
+        <p class="mb-0">Congo (Congo-Brazzaville) has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="costa rica">
+        <h5 class="mb-1">Costa Rica</h5>
+        <p class="mb-0">Costa Rica has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="côte d'ivoire">
+        <h5 class="mb-1">Côte d'Ivoire</h5>
+        <p class="mb-0">Côte d'Ivoire has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="croatia">
+        <h5 class="mb-1">Croatia</h5>
+        <p class="mb-0">Croatia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="cuba">
+        <h5 class="mb-1">Cuba</h5>
+        <p class="mb-0">Cuba has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="cyprus">
+        <h5 class="mb-1">Cyprus</h5>
+        <p class="mb-0">Cyprus offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="czechia">
+        <h5 class="mb-1">Czechia</h5>
+        <p class="mb-0">Czechia combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="democratic republic of the congo">
+        <h5 class="mb-1">Democratic Republic of the Congo</h5>
+        <p class="mb-0">Democratic Republic of the Congo has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="denmark">
+        <h5 class="mb-1">Denmark</h5>
+        <p class="mb-0">Denmark is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="djibouti">
+        <h5 class="mb-1">Djibouti</h5>
+        <p class="mb-0">Djibouti has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="dominica">
+        <h5 class="mb-1">Dominica</h5>
+        <p class="mb-0">Dominica has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="dominican republic">
+        <h5 class="mb-1">Dominican Republic</h5>
+        <p class="mb-0">Dominican Republic has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="ecuador">
+        <h5 class="mb-1">Ecuador</h5>
+        <p class="mb-0">Ecuador has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="egypt">
+        <h5 class="mb-1">Egypt</h5>
+        <p class="mb-0">Egypt presents diverse lifestyles and rapidly growing professional sectors. Work culture often values entrepreneurship and adaptability. Skilled professionals can find opportunities in IT, finance, education, and industrial sectors.</p>
+      </div>
+      <div class="country-card" data-name="el salvador">
+        <h5 class="mb-1">El Salvador</h5>
+        <p class="mb-0">El Salvador has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="equatorial guinea">
+        <h5 class="mb-1">Equatorial Guinea</h5>
+        <p class="mb-0">Equatorial Guinea has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="eritrea">
+        <h5 class="mb-1">Eritrea</h5>
+        <p class="mb-0">Eritrea has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="estonia">
+        <h5 class="mb-1">Estonia</h5>
+        <p class="mb-0">Estonia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="eswatini">
+        <h5 class="mb-1">Eswatini</h5>
+        <p class="mb-0">Eswatini has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="ethiopia">
+        <h5 class="mb-1">Ethiopia</h5>
+        <p class="mb-0">Ethiopia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="fiji">
+        <h5 class="mb-1">Fiji</h5>
+        <p class="mb-0">Fiji has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="finland">
+        <h5 class="mb-1">Finland</h5>
+        <p class="mb-0">Finland is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="france">
+        <h5 class="mb-1">France</h5>
+        <p class="mb-0">France is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="gabon">
+        <h5 class="mb-1">Gabon</h5>
+        <p class="mb-0">Gabon has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="gambia">
+        <h5 class="mb-1">Gambia</h5>
+        <p class="mb-0">Gambia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="georgia">
+        <h5 class="mb-1">Georgia</h5>
+        <p class="mb-0">Georgia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="germany">
+        <h5 class="mb-1">Germany</h5>
+        <p class="mb-0">Germany is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="ghana">
+        <h5 class="mb-1">Ghana</h5>
+        <p class="mb-0">Ghana presents diverse lifestyles and rapidly growing professional sectors. Work culture often values entrepreneurship and adaptability. Skilled professionals can find opportunities in IT, finance, education, and industrial sectors.</p>
+      </div>
+      <div class="country-card" data-name="greece">
+        <h5 class="mb-1">Greece</h5>
+        <p class="mb-0">Greece offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="grenada">
+        <h5 class="mb-1">Grenada</h5>
+        <p class="mb-0">Grenada has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="guatemala">
+        <h5 class="mb-1">Guatemala</h5>
+        <p class="mb-0">Guatemala has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="guinea">
+        <h5 class="mb-1">Guinea</h5>
+        <p class="mb-0">Guinea has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="guinea-bissau">
+        <h5 class="mb-1">Guinea-Bissau</h5>
+        <p class="mb-0">Guinea-Bissau has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="guyana">
+        <h5 class="mb-1">Guyana</h5>
+        <p class="mb-0">Guyana has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="haiti">
+        <h5 class="mb-1">Haiti</h5>
+        <p class="mb-0">Haiti has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="honduras">
+        <h5 class="mb-1">Honduras</h5>
+        <p class="mb-0">Honduras has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="hungary">
+        <h5 class="mb-1">Hungary</h5>
+        <p class="mb-0">Hungary combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="iceland">
+        <h5 class="mb-1">Iceland</h5>
+        <p class="mb-0">Iceland combines high quality of life with professional sectors that emphasize specialized services, tourism, or finance. Work culture is structured and supportive for skilled expatriates.</p>
+      </div>
+      <div class="country-card" data-name="india">
+        <h5 class="mb-1">India</h5>
+        <p class="mb-0">India features vibrant, community-oriented lifestyles with strong social networks. Work culture is adaptable, combining family-centered values with entrepreneurial and professional opportunities. Skilled individuals can explore growth in IT, business services, and education sectors.</p>
+      </div>
+      <div class="country-card" data-name="indonesia">
+        <h5 class="mb-1">Indonesia</h5>
+        <p class="mb-0">Indonesia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="iran">
+        <h5 class="mb-1">Iran</h5>
+        <p class="mb-0">Iran has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="iraq">
+        <h5 class="mb-1">Iraq</h5>
+        <p class="mb-0">Iraq has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="ireland">
+        <h5 class="mb-1">Ireland</h5>
+        <p class="mb-0">Ireland offers a high standard of living with diverse urban environments and inclusive social systems. Work culture emphasizes innovation, collaboration, and professional growth opportunities. Skilled migrants are welcomed through various employment-based visa programs.</p>
+      </div>
+      <div class="country-card" data-name="israel">
+        <h5 class="mb-1">Israel</h5>
+        <p class="mb-0">Israel has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="italy">
+        <h5 class="mb-1">Italy</h5>
+        <p class="mb-0">Italy offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="jamaica">
+        <h5 class="mb-1">Jamaica</h5>
+        <p class="mb-0">Jamaica has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="japan">
+        <h5 class="mb-1">Japan</h5>
+        <p class="mb-0">Japan blends advanced urban infrastructure with rich cultural heritage. Work environments are structured and efficiency-driven, valuing discipline and teamwork. Professionals seeking skilled employment often find robust opportunities in technology, finance, and manufacturing sectors.</p>
+      </div>
+      <div class="country-card" data-name="jordan">
+        <h5 class="mb-1">Jordan</h5>
+        <p class="mb-0">Jordan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="kazakhstan">
+        <h5 class="mb-1">Kazakhstan</h5>
+        <p class="mb-0">Kazakhstan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="kenya">
+        <h5 class="mb-1">Kenya</h5>
+        <p class="mb-0">Kenya presents diverse lifestyles and rapidly growing professional sectors. Work culture often values entrepreneurship and adaptability. Skilled professionals can find opportunities in IT, finance, education, and industrial sectors.</p>
+      </div>
+      <div class="country-card" data-name="kiribati">
+        <h5 class="mb-1">Kiribati</h5>
+        <p class="mb-0">Kiribati has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="kuwait">
+        <h5 class="mb-1">Kuwait</h5>
+        <p class="mb-0">Kuwait features modern urban centers and international business hubs. Work culture often prioritizes development and collaboration. Professionals in engineering, finance, healthcare, and IT can access employment visas.</p>
+      </div>
+      <div class="country-card" data-name="kyrgyzstan">
+        <h5 class="mb-1">Kyrgyzstan</h5>
+        <p class="mb-0">Kyrgyzstan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="laos">
+        <h5 class="mb-1">Laos</h5>
+        <p class="mb-0">Laos has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="latvia">
+        <h5 class="mb-1">Latvia</h5>
+        <p class="mb-0">Latvia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="lebanon">
+        <h5 class="mb-1">Lebanon</h5>
+        <p class="mb-0">Lebanon has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="lesotho">
+        <h5 class="mb-1">Lesotho</h5>
+        <p class="mb-0">Lesotho has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="liberia">
+        <h5 class="mb-1">Liberia</h5>
+        <p class="mb-0">Liberia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="libya">
+        <h5 class="mb-1">Libya</h5>
+        <p class="mb-0">Libya has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="liechtenstein">
+        <h5 class="mb-1">Liechtenstein</h5>
+        <p class="mb-0">Liechtenstein combines high quality of life with professional sectors that emphasize specialized services, tourism, or finance. Work culture is structured and supportive for skilled expatriates.</p>
+      </div>
+      <div class="country-card" data-name="lithuania">
+        <h5 class="mb-1">Lithuania</h5>
+        <p class="mb-0">Lithuania has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="luxembourg">
+        <h5 class="mb-1">Luxembourg</h5>
+        <p class="mb-0">Luxembourg combines high quality of life with professional sectors that emphasize specialized services, tourism, or finance. Work culture is structured and supportive for skilled expatriates.</p>
+      </div>
+      <div class="country-card" data-name="madagascar">
+        <h5 class="mb-1">Madagascar</h5>
+        <p class="mb-0">Madagascar has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="malawi">
+        <h5 class="mb-1">Malawi</h5>
+        <p class="mb-0">Malawi has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="malaysia">
+        <h5 class="mb-1">Malaysia</h5>
+        <p class="mb-0">Malaysia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="maldives">
+        <h5 class="mb-1">Maldives</h5>
+        <p class="mb-0">Maldives has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="mali">
+        <h5 class="mb-1">Mali</h5>
+        <p class="mb-0">Mali has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="malta">
+        <h5 class="mb-1">Malta</h5>
+        <p class="mb-0">Malta offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="marshall islands">
+        <h5 class="mb-1">Marshall Islands</h5>
+        <p class="mb-0">Marshall Islands has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="mauritania">
+        <h5 class="mb-1">Mauritania</h5>
+        <p class="mb-0">Mauritania has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="mauritius">
+        <h5 class="mb-1">Mauritius</h5>
+        <p class="mb-0">Mauritius has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="mexico">
+        <h5 class="mb-1">Mexico</h5>
+        <p class="mb-0">Mexico offers lively social cultures and warm communities. Work environments balance professionalism with interpersonal relationships. Opportunities exist in agriculture, technology, tourism, and service industries for skilled workers.</p>
+      </div>
+      <div class="country-card" data-name="micronesia">
+        <h5 class="mb-1">Micronesia</h5>
+        <p class="mb-0">Micronesia has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="moldova">
+        <h5 class="mb-1">Moldova</h5>
+        <p class="mb-0">Moldova has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="monaco">
+        <h5 class="mb-1">Monaco</h5>
+        <p class="mb-0">Monaco combines high quality of life with professional sectors that emphasize specialized services, tourism, or finance. Work culture is structured and supportive for skilled expatriates.</p>
+      </div>
+      <div class="country-card" data-name="mongolia">
+        <h5 class="mb-1">Mongolia</h5>
+        <p class="mb-0">Mongolia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="montenegro">
+        <h5 class="mb-1">Montenegro</h5>
+        <p class="mb-0">Montenegro has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="morocco">
+        <h5 class="mb-1">Morocco</h5>
+        <p class="mb-0">Morocco has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="mozambique">
+        <h5 class="mb-1">Mozambique</h5>
+        <p class="mb-0">Mozambique has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="myanmar">
+        <h5 class="mb-1">Myanmar</h5>
+        <p class="mb-0">Myanmar has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="namibia">
+        <h5 class="mb-1">Namibia</h5>
+        <p class="mb-0">Namibia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="nauru">
+        <h5 class="mb-1">Nauru</h5>
+        <p class="mb-0">Nauru has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="nepal">
+        <h5 class="mb-1">Nepal</h5>
+        <p class="mb-0">Nepal features vibrant, community-oriented lifestyles with strong social networks. Work culture is adaptable, combining family-centered values with entrepreneurial and professional opportunities. Skilled individuals can explore growth in IT, business services, and education sectors.</p>
+      </div>
+      <div class="country-card" data-name="netherlands">
+        <h5 class="mb-1">Netherlands</h5>
+        <p class="mb-0">Netherlands is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="new zealand">
+        <h5 class="mb-1">New Zealand</h5>
+        <p class="mb-0">New Zealand offers a high standard of living with diverse urban environments and inclusive social systems. Work culture emphasizes innovation, collaboration, and professional growth opportunities. Skilled migrants are welcomed through various employment-based visa programs.</p>
+      </div>
+      <div class="country-card" data-name="nicaragua">
+        <h5 class="mb-1">Nicaragua</h5>
+        <p class="mb-0">Nicaragua has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="niger">
+        <h5 class="mb-1">Niger</h5>
+        <p class="mb-0">Niger has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="nigeria">
+        <h5 class="mb-1">Nigeria</h5>
+        <p class="mb-0">Nigeria presents diverse lifestyles and rapidly growing professional sectors. Work culture often values entrepreneurship and adaptability. Skilled professionals can find opportunities in IT, finance, education, and industrial sectors.</p>
+      </div>
+      <div class="country-card" data-name="north korea">
+        <h5 class="mb-1">North Korea</h5>
+        <p class="mb-0">North Korea has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="north macedonia">
+        <h5 class="mb-1">North Macedonia</h5>
+        <p class="mb-0">North Macedonia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="norway">
+        <h5 class="mb-1">Norway</h5>
+        <p class="mb-0">Norway is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="oman">
+        <h5 class="mb-1">Oman</h5>
+        <p class="mb-0">Oman features modern urban centers and international business hubs. Work culture often prioritizes development and collaboration. Professionals in engineering, finance, healthcare, and IT can access employment visas.</p>
+      </div>
+      <div class="country-card" data-name="pakistan">
+        <h5 class="mb-1">Pakistan</h5>
+        <p class="mb-0">Pakistan features vibrant, community-oriented lifestyles with strong social networks. Work culture is adaptable, combining family-centered values with entrepreneurial and professional opportunities. Skilled individuals can explore growth in IT, business services, and education sectors.</p>
+      </div>
+      <div class="country-card" data-name="palau">
+        <h5 class="mb-1">Palau</h5>
+        <p class="mb-0">Palau has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="panama">
+        <h5 class="mb-1">Panama</h5>
+        <p class="mb-0">Panama has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="papua new guinea">
+        <h5 class="mb-1">Papua New Guinea</h5>
+        <p class="mb-0">Papua New Guinea has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="paraguay">
+        <h5 class="mb-1">Paraguay</h5>
+        <p class="mb-0">Paraguay has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="peru">
+        <h5 class="mb-1">Peru</h5>
+        <p class="mb-0">Peru offers lively social cultures and warm communities. Work environments balance professionalism with interpersonal relationships. Opportunities exist in agriculture, technology, tourism, and service industries for skilled workers.</p>
+      </div>
+      <div class="country-card" data-name="philippines">
+        <h5 class="mb-1">Philippines</h5>
+        <p class="mb-0">Philippines has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="poland">
+        <h5 class="mb-1">Poland</h5>
+        <p class="mb-0">Poland combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="portugal">
+        <h5 class="mb-1">Portugal</h5>
+        <p class="mb-0">Portugal offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="qatar">
+        <h5 class="mb-1">Qatar</h5>
+        <p class="mb-0">Qatar features modern urban centers and international business hubs. Work culture often prioritizes development and collaboration. Professionals in engineering, finance, healthcare, and IT can access employment visas.</p>
+      </div>
+      <div class="country-card" data-name="romania">
+        <h5 class="mb-1">Romania</h5>
+        <p class="mb-0">Romania combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="russia">
+        <h5 class="mb-1">Russia</h5>
+        <p class="mb-0">Russia combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="rwanda">
+        <h5 class="mb-1">Rwanda</h5>
+        <p class="mb-0">Rwanda has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="saint kitts and nevis">
+        <h5 class="mb-1">Saint Kitts and Nevis</h5>
+        <p class="mb-0">Saint Kitts and Nevis has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="saint lucia">
+        <h5 class="mb-1">Saint Lucia</h5>
+        <p class="mb-0">Saint Lucia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="saint vincent and the grenadines">
+        <h5 class="mb-1">Saint Vincent and the Grenadines</h5>
+        <p class="mb-0">Saint Vincent and the Grenadines has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="samoa">
+        <h5 class="mb-1">Samoa</h5>
+        <p class="mb-0">Samoa has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="san marino">
+        <h5 class="mb-1">San Marino</h5>
+        <p class="mb-0">San Marino combines high quality of life with professional sectors that emphasize specialized services, tourism, or finance. Work culture is structured and supportive for skilled expatriates.</p>
+      </div>
+      <div class="country-card" data-name="sao tome and principe">
+        <h5 class="mb-1">Sao Tome and Principe</h5>
+        <p class="mb-0">Sao Tome and Principe has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="saudi arabia">
+        <h5 class="mb-1">Saudi Arabia</h5>
+        <p class="mb-0">Saudi Arabia features modern urban centers and international business hubs. Work culture often prioritizes development and collaboration. Professionals in engineering, finance, healthcare, and IT can access employment visas.</p>
+      </div>
+      <div class="country-card" data-name="senegal">
+        <h5 class="mb-1">Senegal</h5>
+        <p class="mb-0">Senegal has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="serbia">
+        <h5 class="mb-1">Serbia</h5>
+        <p class="mb-0">Serbia combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="seychelles">
+        <h5 class="mb-1">Seychelles</h5>
+        <p class="mb-0">Seychelles has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="sierra leone">
+        <h5 class="mb-1">Sierra Leone</h5>
+        <p class="mb-0">Sierra Leone has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="singapore">
+        <h5 class="mb-1">Singapore</h5>
+        <p class="mb-0">Singapore blends advanced urban infrastructure with rich cultural heritage. Work environments are structured and efficiency-driven, valuing discipline and teamwork. Professionals seeking skilled employment often find robust opportunities in technology, finance, and manufacturing sectors.</p>
+      </div>
+      <div class="country-card" data-name="slovakia">
+        <h5 class="mb-1">Slovakia</h5>
+        <p class="mb-0">Slovakia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="slovenia">
+        <h5 class="mb-1">Slovenia</h5>
+        <p class="mb-0">Slovenia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="solomon islands">
+        <h5 class="mb-1">Solomon Islands</h5>
+        <p class="mb-0">Solomon Islands has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="somalia">
+        <h5 class="mb-1">Somalia</h5>
+        <p class="mb-0">Somalia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="south africa">
+        <h5 class="mb-1">South Africa</h5>
+        <p class="mb-0">South Africa presents diverse lifestyles and rapidly growing professional sectors. Work culture often values entrepreneurship and adaptability. Skilled professionals can find opportunities in IT, finance, education, and industrial sectors.</p>
+      </div>
+      <div class="country-card" data-name="south korea">
+        <h5 class="mb-1">South Korea</h5>
+        <p class="mb-0">South Korea blends advanced urban infrastructure with rich cultural heritage. Work environments are structured and efficiency-driven, valuing discipline and teamwork. Professionals seeking skilled employment often find robust opportunities in technology, finance, and manufacturing sectors.</p>
+      </div>
+      <div class="country-card" data-name="south sudan">
+        <h5 class="mb-1">South Sudan</h5>
+        <p class="mb-0">South Sudan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="spain">
+        <h5 class="mb-1">Spain</h5>
+        <p class="mb-0">Spain offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="sri lanka">
+        <h5 class="mb-1">Sri Lanka</h5>
+        <p class="mb-0">Sri Lanka features vibrant, community-oriented lifestyles with strong social networks. Work culture is adaptable, combining family-centered values with entrepreneurial and professional opportunities. Skilled individuals can explore growth in IT, business services, and education sectors.</p>
+      </div>
+      <div class="country-card" data-name="sudan">
+        <h5 class="mb-1">Sudan</h5>
+        <p class="mb-0">Sudan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="suriname">
+        <h5 class="mb-1">Suriname</h5>
+        <p class="mb-0">Suriname has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="sweden">
+        <h5 class="mb-1">Sweden</h5>
+        <p class="mb-0">Sweden is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="switzerland">
+        <h5 class="mb-1">Switzerland</h5>
+        <p class="mb-0">Switzerland is known for high quality of life, excellent social services, and structured professional environments. Work culture emphasizes planning, efficiency, and employee protections. Skilled migrants can access opportunities in engineering, healthcare, finance, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="syria">
+        <h5 class="mb-1">Syria</h5>
+        <p class="mb-0">Syria has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="taiwan">
+        <h5 class="mb-1">Taiwan</h5>
+        <p class="mb-0">Taiwan blends advanced urban infrastructure with rich cultural heritage. Work environments are structured and efficiency-driven, valuing discipline and teamwork. Professionals seeking skilled employment often find robust opportunities in technology, finance, and manufacturing sectors.</p>
+      </div>
+      <div class="country-card" data-name="tajikistan">
+        <h5 class="mb-1">Tajikistan</h5>
+        <p class="mb-0">Tajikistan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="tanzania">
+        <h5 class="mb-1">Tanzania</h5>
+        <p class="mb-0">Tanzania has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="thailand">
+        <h5 class="mb-1">Thailand</h5>
+        <p class="mb-0">Thailand has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="timor-leste">
+        <h5 class="mb-1">Timor-Leste</h5>
+        <p class="mb-0">Timor-Leste has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="togo">
+        <h5 class="mb-1">Togo</h5>
+        <p class="mb-0">Togo has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="tonga">
+        <h5 class="mb-1">Tonga</h5>
+        <p class="mb-0">Tonga has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="trinidad and tobago">
+        <h5 class="mb-1">Trinidad and Tobago</h5>
+        <p class="mb-0">Trinidad and Tobago has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="tunisia">
+        <h5 class="mb-1">Tunisia</h5>
+        <p class="mb-0">Tunisia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="turkey">
+        <h5 class="mb-1">Turkey</h5>
+        <p class="mb-0">Turkey offers rich cultural traditions and lifestyle balance. Work environments value relationships and productivity. Skilled migrants may find opportunities in tourism, engineering, IT, and business sectors.</p>
+      </div>
+      <div class="country-card" data-name="turkmenistan">
+        <h5 class="mb-1">Turkmenistan</h5>
+        <p class="mb-0">Turkmenistan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="tuvalu">
+        <h5 class="mb-1">Tuvalu</h5>
+        <p class="mb-0">Tuvalu has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="uganda">
+        <h5 class="mb-1">Uganda</h5>
+        <p class="mb-0">Uganda has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="ukraine">
+        <h5 class="mb-1">Ukraine</h5>
+        <p class="mb-0">Ukraine combines traditional and modern lifestyles. Work culture emphasizes technical skills, resilience, and evolving corporate practices. Skilled migrants are welcomed in IT, engineering, and research sectors.</p>
+      </div>
+      <div class="country-card" data-name="united arab emirates">
+        <h5 class="mb-1">United Arab Emirates</h5>
+        <p class="mb-0">United Arab Emirates features modern urban centers and international business hubs. Work culture often prioritizes development and collaboration. Professionals in engineering, finance, healthcare, and IT can access employment visas.</p>
+      </div>
+      <div class="country-card" data-name="united kingdom">
+        <h5 class="mb-1">United Kingdom</h5>
+        <p class="mb-0">United Kingdom offers a high standard of living with diverse urban environments and inclusive social systems. Work culture emphasizes innovation, collaboration, and professional growth opportunities. Skilled migrants are welcomed through various employment-based visa programs.</p>
+      </div>
+      <div class="country-card" data-name="united states of america">
+        <h5 class="mb-1">United States of America</h5>
+        <p class="mb-0">United States of America offers a high standard of living with diverse urban environments and inclusive social systems. Work culture emphasizes innovation, collaboration, and professional growth opportunities. Skilled migrants are welcomed through various employment-based visa programs.</p>
+      </div>
+      <div class="country-card" data-name="uruguay">
+        <h5 class="mb-1">Uruguay</h5>
+        <p class="mb-0">Uruguay has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="uzbekistan">
+        <h5 class="mb-1">Uzbekistan</h5>
+        <p class="mb-0">Uzbekistan has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="vanuatu">
+        <h5 class="mb-1">Vanuatu</h5>
+        <p class="mb-0">Vanuatu has relaxed island lifestyles and community-centered work environments. Tourism, fisheries, and local services are primary employment areas. Short-term work visas are available for skilled and seasonal workers.</p>
+      </div>
+      <div class="country-card" data-name="vatican city">
+        <h5 class="mb-1">Vatican City</h5>
+        <p class="mb-0">Vatican City has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="venezuela">
+        <h5 class="mb-1">Venezuela</h5>
+        <p class="mb-0">Venezuela has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="vietnam">
+        <h5 class="mb-1">Vietnam</h5>
+        <p class="mb-0">Vietnam has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="yemen">
+        <h5 class="mb-1">Yemen</h5>
+        <p class="mb-0">Yemen has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="zambia">
+        <h5 class="mb-1">Zambia</h5>
+        <p class="mb-0">Zambia has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="zimbabwe">
+        <h5 class="mb-1">Zimbabwe</h5>
+        <p class="mb-0">Zimbabwe has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+      <div class="country-card" data-name="palestine">
+        <h5 class="mb-1">Palestine</h5>
+        <p class="mb-0">Palestine has a unique lifestyle blending local traditions with modern economic opportunities. Work culture varies by region, often supporting entrepreneurship, skilled labor, and professional growth in multiple sectors.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container text-center">
+    <p class="mb-1">&copy; 2025 Starlink Immigration</p>
+    <p class="small mb-0">Need help with a visa? <a href="index.html" style="color:var(--yellow); text-decoration:none;">Go back to Home</a> or <a href="index.html#contact" style="color:var(--yellow); text-decoration:none;">Contact us</a>.</p>
+  </div>
+</footer>
+
+<script>
+function filterList(){
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const items = document.querySelectorAll('.country-card');
+  items.forEach(it => {
+    const name = it.getAttribute('data-name') || '';
+    it.style.display = name.indexOf(q) !== -1 || !q ? '' : 'none';
+  });
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
